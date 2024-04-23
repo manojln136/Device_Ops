@@ -1,0 +1,72 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User Management</title>
+    <link
+      rel="stylesheet"
+      href="{% static 'css/user_management/user_styles.css' %}"
+    />
+  </head>
+  <body>
+    <div class="user-management-container">
+      <header>
+        <div class="logo">
+          <img
+            src="{% static 'images/company-logo.png' %}"
+            alt="Company Logo"
+          />
+          <h1>DEVICEOPS</h1>
+        </div>
+        <nav>
+          <ul>
+            <li><a href="{% url 'dashboard' %}">Dashboard</a></li>
+            <li>
+              <a href="{% url 'inventory_management' %}"
+                >Inventory Management</a
+              >
+            </li>
+            <li><a href="{% url 'user_management' %}">User Management</a></li>
+            <li><a href="{% url 'logout' %}">Logout</a></li>
+          </ul>
+        </nav>
+      </header>
+      <main>
+        <h2>User Management</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Employee ID</th>
+              <th>Employee Name</th>
+              <th>Department</th>
+              <th>Email ID</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for user in users %}
+            <tr>
+              <td>{{ user.employee_id }}</td>
+              <td>{{ user.employee_name }}</td>
+              <td>{{ user.department }}</td>
+              <td>{{ user.email_id }}</td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </main>
+      <footer>
+        <p>&copy; 2024 DEVICEOPS. All rights reserved.</p>
+      </footer>
+    </div>
+
+    <script>
+      // Function to show full text in a popup when clicking on a table cell
+      function showFullText(element) {
+        alert(element.innerText);
+      }
+    </script>
+  </body>
+</html>

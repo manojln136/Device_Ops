@@ -1,0 +1,140 @@
+/* styles.css */
+
+@import url("https://fonts.googleapis.com/css2?family=Tourney:wght@400;700&display=swap");
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #c0ccf7;
+  position: relative;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.left-panel {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 80px;
+  background-color: #d6e2f9;
+  color: #000000;
+}
+
+.left-panel .logo {
+  width: 500px;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+.left-panel h1 {
+  font-size: 36px;
+  margin: 0;
+  font-family: "Tourney", sans-serif;
+}
+
+.left-panel > div {
+  margin-bottom: 10px;
+}
+
+.left-panel p {
+  font-size: 25px;
+  margin: 0;
+  font-family: "Tourney", sans-serif;
+}
+
+.right-panel {
+  flex: 1;
+  padding: 50px;
+  background-color: #6a90b3;
+  border-radius: 50px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  margin: 0 0px; /* Adjust margins as needed */
+}
+
+.right-panel h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #ffffff;
+}
+
+.input-group {
+  margin-bottom: 20px;
+}
+
+.input-group label {
+  display: block;
+  font-size: 14px;
+  margin-bottom: 5px;
+  color: #ffffff;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  border: 1px solid #cccccc;
+  border-radius: 5px;
+}
+
+.forgot-password {
+  display: block;
+  text-decoration: none;
+  font-size: 14px;
+  color: #ffffff;
+  margin-bottom: 20px;
+}
+
+button[type="submit"] {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  color: #ffffff;
+  background-color: #0056b3;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button[type="submit"]:hover {
+  background-color: #357ae8;
+}
+
+.login-options {
+  margin-top: 20px;
+  text-align: center;
+  color: #ffffff;
+}
+
+.login-options p {
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.google {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  color: #ffffff;
+  background-color: #0056b3;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.google:hover {
+  background-color: #357ae8;
+}
+
+.signup {
+  font-weight: bold;
+  text-decoration: none;
+  color: #007bff;
+}

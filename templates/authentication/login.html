@@ -1,0 +1,51 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login Page</title>
+    <link rel="stylesheet" href="static/css/styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+    <!-- Font Awesome CSS -->
+  </head>
+  <body>
+    <div class="container">
+      <div class="left-panel">
+        <img
+          src="static/images/company-logo.png"
+          alt="Company Logo"
+          class="logo"
+        />
+        <h1>DEVICEOPS</h1>
+        <p>DEVICE MANAGEMENT SYSTEM</p>
+      </div>
+      <div class="right-panel">
+        <form method="post">
+          <h2>Login Now</h2>
+          {% csrf_token %}
+          <div class="input-group">
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" required />
+          </div>
+          <div class="input-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required />
+          </div>
+          <button type="submit">LOGIN</button>
+          {% if messages %}
+          <ul class="messages">
+            {% for message in messages %}
+            <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+            {% endfor %}
+          </ul>
+          {% endif %}
+        </form>
+        <div class="login-options"></div>
+      </div>
+    </div>
+  </body>
+</html>

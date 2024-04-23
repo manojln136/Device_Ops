@@ -1,0 +1,89 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Inventory Management</title>
+    <link
+      rel="stylesheet"
+      href="{% static 'css/inventory_management/inventory_styles.css' %}"
+    />
+  </head>
+  <body>
+    <div class="inventory-container">
+      <header>
+        <div class="logo">
+          <img
+            src="{% static 'images/company-logo.png' %}"
+            alt="Company Logo"
+          />
+          <h1>DEVICEOPS</h1>
+        </div>
+        <nav>
+          <ul>
+            <li><a href="{% url 'dashboard' %}">Dashboard</a></li>
+            <li>
+              <a href="{% url 'inventory_management' %}"
+                >Inventory Management</a
+              >
+            </li>
+            <li><a href="{% url 'user_management' %}">User Management</a></li>
+            <li><a href="{% url 'logout' %}">Logout</a></li>
+          </ul>
+        </nav>
+      </header>
+      <main>
+        <h2>Inventory Management</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Item ID</th>
+              <th>Item Name</th>
+              <th>secondary_name</th>
+              <th>Description</th>
+              <th>Availability</th>
+              <th>In Use</th>
+              <th>Reserve</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for item in inventory_items %}
+            <tr>
+              <td class="clickable" onclick="showFullText(this)">
+                {{ item.item_id }}
+              </td>
+              <td class="clickable" onclick="showFullText(this)">
+                {{ item.item_name }}
+              </td>
+              <td class="clickable" onclick="showFullText(this)">
+                {{ item.secondary_name }}
+              </td>
+              <td class="clickable" onclick="showFullText(this)">
+                {{ item.description }}
+              </td>
+              <td class="clickable" onclick="showFullText(this)">
+                {{ item.availability }}
+              </td>
+              <td class="clickable" onclick="showFullText(this)">
+                {{ item.in_use }}
+              </td>
+              <td><button>Reserve</button></td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </main>
+      <footer>
+        <p>&copy; 2024 DEVICEOPS. All rights reserved.</p>
+      </footer>
+    </div>
+
+    <script>
+      // Function to show full text in a popup when clicking on a table cell
+      function showFullText(element) {
+        alert(element.innerText);
+      }
+    </script>
+  </body>
+</html>
